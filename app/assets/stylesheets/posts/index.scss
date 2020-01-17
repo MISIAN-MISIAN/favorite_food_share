@@ -31,7 +31,10 @@ a:link, a:visited, a:hover, a:active{
   .image{
     display: block;
     width: 100%;
+    height: 109px;
   }
+
+  
   .category{
     margin: 15px 9px 10px;
     color: #aaa;
@@ -85,4 +88,18 @@ a:link, a:visited, a:hover, a:active{
 .item-dinner,
 .item-dinner .category::before{
   border-color: #caefff;
+}
+
+
+.item-m{
+  width: 364px;
+  image{
+    height: 146px;
+  }
+}
+.item-l{
+  width: 732px;
+  image{
+    height: 403px;
+  }
 }
