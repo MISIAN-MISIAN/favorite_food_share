@@ -67,3 +67,22 @@ a:link, a:visited, a:hover, a:active{
   }
 }
 
+.item-breakfast,
+.item-breakfast .category::before{
+  border-color: #ffC0CB;
+}
+
+.item-lunch,
+.item-lunch .category::before{
+  border-color: #76C047;
+}
+
+.item-afternoon-snack,
+.item-afternoon-snack .category::before{
+  border-color: #fff100;
+}
+
+.item-dinner,
+.item-dinner .category::before{
+  border-color: #caefff;
+}
