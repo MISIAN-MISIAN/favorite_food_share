@@ -66,3 +66,5 @@ gem "font-awesome-sass"
 gem 'jquery-rails'
 
 gem "devise"
+# deviseの日本語化のgem
+gem 'rails-i18n'
