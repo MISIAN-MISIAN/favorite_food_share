@@ -41,7 +41,7 @@ a:link, a:visited, a:hover, a:active{
   }
 
   .nav{
-    margin: 35px auto 20px;
+    margin: 35px auto 0px;
     &-item{
       margin-top: 20px;
       text-align: center;
@@ -64,7 +64,19 @@ a:link, a:visited, a:hover, a:active{
       }
     }
 
+    &-icon{
+      margin: 50px auto 5px;
+      position: relative;
+      .fas.fa-user-cog{
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        color: #7c5119;
+        font-size: 1.3rem;
+      }
+    }
   }
+ 
 }
 
 

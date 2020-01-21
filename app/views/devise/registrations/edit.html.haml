@@ -3,6 +3,11 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
+    = f.label :nickname
+    %em (最大6文字)
+    %br/
+    = f.text_field :nickname, autofocus: true, maxlength: "6", class: "field-name"
+  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -30,7 +35,8 @@
     = f.password_field :current_password, autocomplete: "current-password"
   .actions
     = f.submit "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+    -# アカウント削除の記載コメントアウト下記
+-# %h3 Cancel my account
+-# %p
+-#   Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
 = link_to "Back", :back
