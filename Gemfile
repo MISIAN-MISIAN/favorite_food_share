@@ -66,5 +66,8 @@ gem "font-awesome-sass"
 gem 'jquery-rails'
 
 gem "devise"
+# 管理者権限を与えるgem
+gem 'cancancan'
+gem 'rails_admin'
 # deviseの日本語化のgem
 gem 'rails-i18n'

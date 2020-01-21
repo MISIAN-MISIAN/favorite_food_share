@@ -1,6 +1,11 @@
-%h2 Sign up
+%h2 新規登録
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
+  .field
+    = f.label :nickname
+    %em (最大6文字)
+    %br/
+    = f.text_field :nickname, autofocus: true, maxlength: "6", class: "field-name"
   .field
     = f.label :email
     %br/
@@ -9,7 +14,7 @@
     = f.label :password
     - if @minimum_password_length
       %em
-        (#{@minimum_password_length} characters minimum)
+        (#{@minimum_password_length} 文字)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
@@ -17,5 +22,5 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
+    = f.submit "登録"
 = render "devise/shared/links"
