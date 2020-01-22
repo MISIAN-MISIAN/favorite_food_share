@@ -22,13 +22,13 @@
       %li.nav-item
         %a{href: "#"}
           Favorite Restaurant
-      %li.nav-icon
-        %a{href: user_session_path}
-          %i.fas.fa-user-cog
-      　
-      %li.nav-item
-        %a{href: ""}
-          投稿
+      - if current_user
+        %li.nav-icon
+          %a{href: "/admin"}
+            %i.fas.fa-user-cog
+        %li.nav-item
+          %a{href: "#"}
+            投稿
           
       
 %section.item.item-l.item-breakfast
