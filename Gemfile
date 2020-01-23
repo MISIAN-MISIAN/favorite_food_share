@@ -71,3 +71,6 @@ gem 'cancancan'
 gem 'rails_admin'
 # deviseの日本語化のgem
 gem 'rails-i18n'
+
+gem 'carrierwave'
+gem 'mini_magick'

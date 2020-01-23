@@ -1,0 +1,52 @@
+%main.main
+  %section.main__block
+    = form_with model:@post, local:true do |f|
+      %h2.sell__block__head
+        食事の写真を入力してください
+      .sell__block__form
+        .sell__block__form__upload
+          %h3.sell__block__form__upload__head
+            食事画像
+            %span.require 必須
+          %p 最大10枚までアップロードできます
+          #image-box-1
+            .item-num-0#image-box__container
+              .input-area
+                = f.file_field :image, style: "display:none", id:"img-file"
+                %label{for: "img-file"}
+                  %i.fas.fa-camera
+            - if @post.errors.any?
+              - if @post.errors[:image]
+                .error-messages
+                  - @post.errors.full_messages_for(:image).each do |error|
+                    .error-message
+                      画像がありません
+        .sell__block__form__name
+          .form-group__name
+            %label
+              食事時間
+              %span.require 必須
+            %div
+              = f.select :meals, [["Breakfast"],["Lunch"],["Afternoon Snack"],["Dinner"]],{prompt:"選択してください"},class: "form__group__name"
+            - if @post.errors.any?
+              - if @post.errors[:meals]
+                .error-messages
+                  - @post.errors.full_messages_for(:meals).each do |error|
+                    .error-message
+                      入力してください
+          .form-group__description
+            %label
+              食事の説明
+              %span.require 必須
+            %div
+              = f.text_area :description, {placeholder:"商品の説明（必須 1,000文字以内）（食事名、材料、作り方など）例）ハンバーガーを作りました。買ってきたバンズにトマトとレタスと昨晩の残りのハンバーグを挟み、ウイスターソースとケチャップでタレを作りました",rows: "5", class: "textarea__default" }
+            - if @post.errors.any?
+              - if @post.errors[:description]
+                .error-messages
+                  - @post.errors.full_messages_for(:description).each do |error|
+                    .error-message
+                      入力してください
+          .sell__block__form__btn
+            %div
+              = f.submit "投稿する",class: "btn-default__btn-red"
+              = link_to "もどる", root_path, class: "btn-default__btn-gray"
