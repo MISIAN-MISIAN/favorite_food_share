@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
 
-  def index
-    @posts = Post.all
-  end
+  mount_uploader :image, ImageUploader
+  belongs_to :user
+
+
 end
