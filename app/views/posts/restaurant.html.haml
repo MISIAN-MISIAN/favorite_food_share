@@ -1,0 +1,22 @@
+= render "posts/header"
+- @restaurant.each do |restaurant|
+  %section.item.item-m.item-restaurant
+    %a{href: "#"}
+      = image_tag "#{restaurant.image}",class:"image",style:"height:auto;"
+      .category
+        Favorite Restaurant
+      %p.description
+        = restaurant.description
+
+
+%script{src:"http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.js"}
+:javascript
+  window.onload = function(){
+
+    new Masonry('body',{
+      itemSelector: '.item',
+      columnWidth: 180,
+      gutter: 4
+    });
+
+  };

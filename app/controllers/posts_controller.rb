@@ -1,11 +1,32 @@
 class PostsController < ApplicationController
 
   def index
-    @breakfast      = Post.all.order(id:"desc").where(meals: "Breakfast")
-    @lunch          = Post.all.order(id:"desc").where(meals: "Lunch")
-    @afternoonsnack = Post.all.order(id:"desc").where(meals: "Afternoon Snack")
-    @dinner         = Post.all.order(id:"desc").where(meals: "Diner")
+    @breakfast      = Post.order(created_at:"desc").where(meals: "Breakfast")
+    @lunch          = Post.order(created_at:"desc").where(meals: "Lunch")
+    @afternoonsnack = Post.order(created_at:"desc").where(meals: "Afternoon Snack")
+    @dinner         = Post.order(created_at:"desc").where(meals: "Dinner")
+    @restaurant     = Post.order(created_at:"desc").where(meals: "Favorite Restaurant")
     @random = Post.order("RAND()").limit(1)
+  end
+
+  def breakfast
+    @breakfast      = Post.order(created_at:"desc").where(meals: "Breakfast")
+  end
+
+  def lunch
+    @lunch          = Post.order(created_at:"desc").where(meals: "Lunch")
+  end
+
+  def afternoonsnack
+    @afternoonsnack = Post.order(created_at:"desc").where(meals: "Afternoon Snack")
+  end
+
+  def dinner
+    @dinner         = Post.order(created_at:"desc").where(meals: "Dinner")
+  end
+
+  def restaurant
+    @restaurant     = Post.order(created_at:"desc").where(meals: "Favorite Restaurant")
   end
   
   def new
@@ -23,6 +44,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :meals, :description).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :meals, :description, :text).merge(user_id: current_user.id)
   end
 end

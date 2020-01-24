@@ -1,0 +1,20 @@
+= render "posts/header"
+- @lunch.each do |lunch|
+  %section.item.item-lunch
+    %a{href: "#"}
+      = image_tag "#{lunch.image}", class:"image"
+      .category
+        Lunch
+      %p.description
+        = lunch.description
+%script{src:"http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.js"}
+:javascript
+  window.onload = function(){
+
+    new Masonry('body',{
+      itemSelector: '.item',
+      columnWidth: 180,
+      gutter: 4
+    });
+
+  };

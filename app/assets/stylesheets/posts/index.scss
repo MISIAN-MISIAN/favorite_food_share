@@ -113,6 +113,10 @@ a:link, a:visited, a:hover, a:active{
     vertical-align: -5px;
 
   }
+  .title{
+    text-align: center;
+    
+  }
   .description{
     margin: 10px;
     line-height: 1.5;
@@ -189,6 +193,11 @@ a:link, a:visited, a:hover, a:active{
 .item-dinner,
 .item-dinner .category::before{
   border-color: #caefff;
+}
+
+.item-restaurant,
+.item-restaurant .category::before{
+  border-color: rgb(253, 67, 67);
 }
 
 
