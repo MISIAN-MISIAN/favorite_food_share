@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   def index
+    @posts = Post.all
     @breakfast      = Post.order(created_at:"desc").where(meals: "Breakfast")
     @lunch          = Post.order(created_at:"desc").where(meals: "Lunch")
     @afternoonsnack = Post.order(created_at:"desc").where(meals: "Afternoon Snack")
@@ -10,23 +11,23 @@ class PostsController < ApplicationController
   end
 
   def breakfast
-    @breakfast      = Post.all.order(created_at:"desc").where(meals: "Breakfast")
+    @breakfast      = Post.order(created_at:"desc").where(meals: "Breakfast")
   end
 
   def lunch
-    @lunch          = Post.all.order(created_at:"desc").where(meals: "Lunch")
+    @lunch          = Post.order(created_at:"desc").where(meals: "Lunch")
   end
 
   def afternoonsnack
-    @afternoonsnack = Post.all.order(created_at:"desc").where(meals: "Afternoon Snack")
+    @afternoonsnack = Post.order(created_at:"desc").where(meals: "Afternoon Snack")
   end
 
   def dinner
-    @dinner         = Post.all.order(created_at:"desc").where(meals: "Dinner")
+    @dinner         = Post.order(created_at:"desc").where(meals: "Dinner")
   end
 
   def restaurant
-    @restaurant     = Post.all.order(created_at:"desc").where(meals: "Favorite Restaurant")
+    @restaurant     = Post.order(created_at:"desc").where(meals: "Favorite Restaurant")
   end
   
   def new
