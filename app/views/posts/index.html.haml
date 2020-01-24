@@ -12,6 +12,8 @@
       = image_tag "#{breakfast.image}", class:"image"
       .category
         Breakfast
+      %h2.title
+        = breakfast.title
       %p.description
         = breakfast.description
 - @lunch.each do |lunch|
@@ -20,6 +22,8 @@
       = image_tag "#{lunch.image}", class:"image"
       .category
         Lunch
+      %h2.title
+        = lunch.title
       %p.description
         = lunch.description
 - @afternoonsnack.each do |afternoonsnack|
@@ -28,6 +32,8 @@
       = image_tag "#{afternoonsnack.image}",class:"image"
       .category
         Afternoon Snack
+      %h2.title
+        = afternoonsnack.title
       %p.description
         = afternoonsnack.description
 - @dinner.each do |dinner|
@@ -36,6 +42,8 @@
       = image_tag "#{dinner.image}", class:"image"
       .category
         Dinner
+      %h2.title
+        = dinner.title
       %p.description
         = dinner.description
 - @restaurant.each do |restaurant|
@@ -44,6 +52,8 @@
       = image_tag "#{restaurant.image}",class:"image",style:"height:auto;"
       .category
         Favorite Restaurant
+      %h2.title
+        = restaurant.title
       %p.description
         = restaurant.description
 

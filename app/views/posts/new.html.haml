@@ -24,6 +24,11 @@
         .sell__block__form__name
           .form-group__name
             %label
+              タイトルor店名
+              %span.require 必須
+            %div
+              = f.text_field :meals, class: "form__group__name title",placeholder:"タイトルor店名の入力をしてください　例)ハンバーガー、いきなりステーキetc"
+            %label
               食事時間
               %span.require 必須
             %div

@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
     @breakfast      = Post.order(created_at:"desc").where(meals: "Breakfast")
     @lunch          = Post.order(created_at:"desc").where(meals: "Lunch")
     @afternoonsnack = Post.order(created_at:"desc").where(meals: "Afternoon Snack")
@@ -45,6 +44,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :meals, :description).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :meals, :description, :text).merge(user_id: current_user.id)
   end
 end
