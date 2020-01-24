@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
 
   def index
-    @breakfast      = Post.all.order(id:"desc").where(meals: "Breakfast")
-    @lunch          = Post.all.order(id:"desc").where(meals: "Lunch")
-    @afternoonsnack = Post.all.order(id:"desc").where(meals: "Afternoon Snack")
-    @dinner         = Post.all.order(id:"desc").where(meals: "Diner")
+    @breakfast      = Post.all.order(created_at:"desc").where(meals: "Breakfast")
+    @lunch          = Post.all.order(created_at:"desc").where(meals: "Lunch")
+    @afternoonsnack = Post.all.order(created_at:"desc").where(meals: "Afternoon Snack")
+    @dinner         = Post.all.order(created_at:"desc").where(meals: "Dinner")
+    @restaurant     = Post.all.order(created_at:"desc").where(meals: "Favorite Restaurant")
     @random = Post.order("RAND()").limit(1)
   end
+
+  
   
   def new
     @post = Post.new

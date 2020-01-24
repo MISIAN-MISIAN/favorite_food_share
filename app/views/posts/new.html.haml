@@ -27,7 +27,7 @@
               食事時間
               %span.require 必須
             %div
-              = f.select :meals, [["Breakfast"],["Lunch"],["Afternoon Snack"],["Dinner"]],{prompt:"選択してください"},class: "form__group__name"
+              = f.select :meals, [["Breakfast"],["Lunch"],["Afternoon Snack"],["Dinner"],["Favorite Restaurant"]],{prompt:"選択してください"},class: "form__group__name"
             - if @post.errors.any?
               - if @post.errors[:meals]
                 .error-messages
