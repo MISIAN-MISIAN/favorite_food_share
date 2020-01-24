@@ -1,0 +1,31 @@
+%header.header.item
+  %h1
+    %a{href: "#"}
+      = image_tag "logo2.png",class:"logo"
+  .nav
+    %ul
+      %li.nav-item
+        %a{href: "/"}
+          HOME
+      %li.nav-item
+        %a{href: breakfast_posts_path}
+          Breakfast
+      %li.nav-item
+        %a{href: lunch_posts_path}
+          Lunch
+      %li.nav-item
+        %a{href: afternoonsnack_posts_path}
+          Afternoon Snack
+      %li.nav-item
+        %a{href: dinner_posts_path}
+          Dinner
+      %li.nav-item
+        %a{href: restaurant_posts_path}
+          Favorite Restaurant
+      - if current_user
+        %li.nav-icon
+          %a{href: "/admin"}
+            %i.fas.fa-user-cog
+        %li.nav-item
+          %a{href: new_post_path }
+            投稿

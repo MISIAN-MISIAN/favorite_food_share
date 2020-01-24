@@ -1,35 +1,4 @@
-%header.header.item
-  %h1
-    %a{href: "#"}
-      = image_tag "logo2.png",class:"logo"
-  .nav
-    %ul
-      %li.nav-item
-        %a{href: "#"}
-          HOME
-      %li.nav-item
-        %a{href: "#"}
-          Breakfast
-      %li.nav-item
-        %a{href: "#"}
-          Lunch
-      %li.nav-item
-        %a{href: "#"}
-          Afternoon Snack
-      %li.nav-item
-        %a{href: "#"}
-          Dinner
-      %li.nav-item
-        %a{href: "#"}
-          Favorite Restaurant
-      - if current_user
-        %li.nav-icon
-          %a{href: "/admin"}
-            %i.fas.fa-user-cog
-        %li.nav-item
-          %a{href: new_post_path }
-            投稿
-
+= render "posts/header"
 %section.item.item-l.item-breakfast
   %a{href: "#"}
     = image_tag "image_L_1.jpg",class:"image-L"
@@ -54,9 +23,9 @@
       %p.description
         = lunch.description
 - @afternoonsnack.each do |afternoonsnack|
-  %section.item.item-m.item-afternoon-snack
+  %section.item.item-afternoon-snack
     %a{href: "#"}
-      = image_tag "#{afternoonsnack.image}",class:"image",style:"height:auto;"
+      = image_tag "#{afternoonsnack.image}",class:"image"
       .category
         Afternoon Snack
       %p.description
