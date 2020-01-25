@@ -5,10 +5,10 @@
       = image_tag "#{restaurant.image}",class:"image",style:"height:auto;"
       .category
         Favorite Restaurant
+      %h2.title
+        = restaurant.title
       %p.description
         = restaurant.description
-
-
 %script{src:"http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.js"}
 :javascript
   window.onload = function(){

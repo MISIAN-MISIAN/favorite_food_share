@@ -5,6 +5,8 @@
       = image_tag "#{breakfast.image}", class:"image"
       .category
         Breakfast
+      %h2.title
+        = breakfast.title
       %p.description
         = breakfast.description
 %script{src:"http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.js"}

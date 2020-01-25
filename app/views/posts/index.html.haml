@@ -5,57 +5,58 @@
     .category
       Breakfast
     %p.description
-      テキストテキストダミーテキストダミーテキスト
-- @breakfast.each do |breakfast|
-  %section.item.item-breakfast
-    %a{href: "#"}
-      = image_tag "#{breakfast.image}", class:"image"
-      .category
-        Breakfast
-      %h2.title
-        = breakfast.title
-      %p.description
-        = breakfast.description
-- @lunch.each do |lunch|
-  %section.item.item-lunch
-    %a{href: "#"}
-      = image_tag "#{lunch.image}", class:"image"
-      .category
-        Lunch
-      %h2.title
-        = lunch.title
-      %p.description
-        = lunch.description
-- @afternoonsnack.each do |afternoonsnack|
-  %section.item.item-afternoon-snack
-    %a{href: "#"}
-      = image_tag "#{afternoonsnack.image}",class:"image"
-      .category
-        Afternoon Snack
-      %h2.title
-        = afternoonsnack.title
-      %p.description
-        = afternoonsnack.description
-- @dinner.each do |dinner|
-  %section.item.item-dinner
-    %a{href: "#"}
-      = image_tag "#{dinner.image}", class:"image"
-      .category
-        Dinner
-      %h2.title
-        = dinner.title
-      %p.description
-        = dinner.description
-- @restaurant.each do |restaurant|
-  %section.item.item-m.item-restaurant
-    %a{href: "#"}
-      = image_tag "#{restaurant.image}",class:"image",style:"height:auto;"
-      .category
-        Favorite Restaurant
-      %h2.title
-        = restaurant.title
-      %p.description
-        = restaurant.description
+      テキスト
+- @post.each do |post|
+  - if post.meals == "Breakfast"
+    %section.item.item-breakfast
+      %a{href: "#"}
+        = image_tag "#{post.image}", class:"image"
+        .category
+          Breakfast
+        %h2.title
+          = post.title
+        %p.description
+          = post.description
+  - elsif post.meals == "Lunch"
+    %section.item.item-lunch
+      %a{href: "#"}
+        = image_tag "#{post.image}", class:"image"
+        .category
+          Lunch
+        %h2.title
+          = post.title
+        %p.description
+          = post.description
+  - elsif post.meals == "Afternoon Snack"
+    %section.item.item-afternoon-snack
+      %a{href: "#"}
+        = image_tag "#{post.image}",class:"image"
+        .category
+          Afternoon Snack
+        %h2.title
+          = post.title
+        %p.description
+          = post.description
+  - elsif post.meals == "Dinner"
+    %section.item.item-dinner
+      %a{href: "#"}
+        = image_tag "#{post.image}", class:"image"
+        .category
+          Dinner
+        %h2.title
+          = post.title
+        %p.description
+          = post.description
+  - else
+    %section.item.item-m.item-restaurant
+      %a{href: "#"}
+        = image_tag "#{post.image}",class:"image",style:"height:auto;"
+        .category
+          Favorite Restaurant
+        %h2.title
+          = post.title
+        %p.description
+          = post.description
 
 
 %script{src:"http://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.js"}
