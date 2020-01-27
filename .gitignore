@@ -29,3 +29,5 @@
 /public/images/*
 /assets/images/*
 /public/uploads/*
+
+.env
