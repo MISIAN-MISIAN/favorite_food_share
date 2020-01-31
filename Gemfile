@@ -78,3 +78,5 @@ gem 'mini_magick'
 gem 'http'
 gem 'geocoder'
 gem 'gmaps4rails'
+
+gem 'pry-rails'
