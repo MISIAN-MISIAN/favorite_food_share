@@ -39,6 +39,11 @@
                   - @post.errors.full_messages_for(:meals).each do |error|
                     .error-message
                       入力してください
+            %label
+              住所
+              %span.require 必須
+            %div
+              = f.text_field :address, class: "form__group__name title",placeholder:"レストランの住所を入力してください　例)　東京都港区１−１−１"
           .form-group__description
             %label
               食事の説明
@@ -59,7 +64,7 @@
             -# :javascript
             -#   function initMap() {
 
-            -#     var test = {lat: #{@map.latitude}, lng: #{@map.longitude}};
+            -#     var test = {lat: #{@post.latitude}, lng: #{@post.longitude}};
             -#     var map = new google.maps.Map(document.getElementById('map'), {
             -#       zoom: 15,
             -#       center: test
@@ -67,7 +72,7 @@
             -#     var transitLayer = new google.maps.TransitLayer();
             -#     transitLayer.setMap(map);
 
-            -#     var contentString = '住所：#{@map.address}';
+            -#     var contentString = '住所：#{@post.address}';
             -#     var infowindow = new google.maps.InfoWindow({
             -#       content: contentString
             -#     });
@@ -85,4 +90,19 @@
             -# %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?v=3.exp&key=google_map_api&callback=initMap"}
             -# :cdata
 
-  
+          -# %div(style="width: 100%;" )
+          -#   #map(style="height: 200px;" )
+          -#     :javascript
+          -#       handler = Gmaps.build('Google');
+          -#       handler.buildMap({
+          -#         provider: {
+          -#           zoom: 12,
+          -#           center:    new google.maps.LatLng(#{@post.latitude}, #{@post.longitude}),
+          -#           mapTypeId: google.maps.MapTypeId.ROADMAP
+          -#         },
+          -#         internal: {id: 'map'}}, function(){
+          -#         handler.fitMapToBounds();
+          -#       });
+          -#     %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?v=3.exp&key=google_map_api&callback=initMap"}
+
+

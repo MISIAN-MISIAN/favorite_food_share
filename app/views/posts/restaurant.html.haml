@@ -20,3 +20,20 @@
     });
 
   };
+
+
+%div(style="width: 100%;" )
+  #map(style="height: 200px;" )
+    :javascript
+      handler = Gmaps.build('Google');
+      handler.buildMap({
+        provider: {
+          zoom: 12,
+          center:    new google.maps.LatLng(#{@restaurant.latitude}, #{@restaurant.longitude}),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        },
+        internal: {id: 'map'}}, function(){
+        handler.fitMapToBounds();
+      });
+    %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?v=3.exp&key=google_map_api&callback=initMap"}
+
