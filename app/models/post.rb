@@ -5,10 +5,9 @@ class Post < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode
-
   private
   def geocode
-    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=[google_map_api]")
+    uri = URI.escape("https://maps.googleapis.com/maps/api/geocode/json?address="+self.address.gsub(" ", "")+"&key=#{google_map_api}")
     res = HTTP.get(uri).to_s
     response = JSON.parse(res)
     self.latitude = response["results"][0]["geometry"]["location"]["lat"]
