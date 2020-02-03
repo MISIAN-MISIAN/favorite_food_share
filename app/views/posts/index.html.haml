@@ -9,7 +9,7 @@
 - @post.each do |post|
   - if post.meals == "Breakfast"
     %section.item.item-breakfast
-      %a{href: "#"}
+      %a{href: "/posts/#{post.id}"}
         = image_tag "#{post.image}", class:"image"
         .category
           Breakfast
@@ -19,7 +19,7 @@
           = post.description
   - elsif post.meals == "Lunch"
     %section.item.item-lunch
-      %a{href: "#"}
+      %a{href: "/posts/#{post.id}"}
         = image_tag "#{post.image}", class:"image"
         .category
           Lunch
@@ -29,7 +29,7 @@
           = post.description
   - elsif post.meals == "Afternoon Snack"
     %section.item.item-afternoon-snack
-      %a{href: "#"}
+      %a{href: "/posts/#{post.id}"}
         = image_tag "#{post.image}",class:"image"
         .category
           Afternoon Snack
@@ -39,7 +39,7 @@
           = post.description
   - elsif post.meals == "Dinner"
     %section.item.item-dinner
-      %a{href: "#"}
+      %a{href: "/posts/#{post.id}"}
         = image_tag "#{post.image}", class:"image"
         .category
           Dinner
@@ -49,7 +49,7 @@
           = post.description
   - else
     %section.item.item-m.item-restaurant
-      %a{href: "#"}
+      %a{href: "/posts/#{post.id}"}
         = image_tag "#{post.image}",class:"image",style:"height:auto;"
         .category
           Favorite Restaurant

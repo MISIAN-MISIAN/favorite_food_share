@@ -44,6 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:image, :meals, :description, :text, :address, :latitude, :longitude).merge(user_id: current_user.id)

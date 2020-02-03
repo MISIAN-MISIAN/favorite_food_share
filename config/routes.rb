@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       get "lunch"
       get "afternoonsnack"
       get "dinner"
-      get "tab3"
       get "restaurant"
     end
   end
