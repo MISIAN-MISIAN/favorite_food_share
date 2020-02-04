@@ -1,7 +1,7 @@
 = render "posts/header"
 - @restaurant.each do |restaurant|
   %section.item.item-m.item-restaurant
-    %a{href: "#"}
+    %a{href: "/posts/#{restaurant.id}"}
       = image_tag "#{restaurant.image}",class:"image",style:"height:auto;"
       .category
         Favorite Restaurant

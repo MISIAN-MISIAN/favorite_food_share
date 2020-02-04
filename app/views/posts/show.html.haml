@@ -11,8 +11,9 @@
   
 
   %div.map-box
-    %h2.address
-      お店住所
+    - if @post.address == true
+      %h2.address
+        お店住所
     %p.address-name
       = @post.address
     #map

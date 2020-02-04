@@ -1,7 +1,7 @@
 = render "posts/header"
 - @dinner.each do |dinner|
   %section.item.item-dinner
-    %a{href: "#"}
+    %a{href: "/posts/#{dinner.id}"}
       = image_tag "#{dinner.image}", class:"image"
       .category
         Dinner
