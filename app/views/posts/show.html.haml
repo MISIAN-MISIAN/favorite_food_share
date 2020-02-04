@@ -1,21 +1,61 @@
 %main.show-box
-  %section.item-s.item-m.item-restaurant
-    %a{href: posts_path}
-      = image_tag "#{@post.image}",class:"image",style:"height:auto;"
-      .category
-        Favorite Restaurant
-      %h2.title
-        = @post.title
-      %p.description
-        = @post.description
-  
+  - if @post.meals == "Breakfast"
+    %section.item-s.item-breakfast
+      %a{href: posts_path}
+        = image_tag "#{@post.image}", class:"image"
+        .category
+          Breakfast
+        %h2.title
+          = @post.title
+        %p.description
+          = @post.description
+  - elsif @post.meals == "Lunch"
+    %section.item-s.item-lunch
+      %a{href: posts_path}
+        = image_tag "#{@post.image}", class:"image"
+        .category
+          Lunch
+        %h2.title
+          = @post.title
+        %p.description
+          = @post.description
+  - elsif @post.meals == "Afternoon Snack"
+    %section.item-s.item-afternoon-snack
+      %a{href: posts_path}
+        = image_tag "#{@post.image}",class:"image"
+        .category
+          Afternoon Snack
+        %h2.title
+          = @post.title
+        %p.description
+          = @post.description
+  - elsif @post.meals == "Dinner"
+    %section.item-s.item-dinner
+      %a{href: posts_path}
+        = image_tag "#{@post.image}", class:"image"
+        .category
+          Dinner
+        %h2.title
+          = @post.title
+        %p.description
+          = @post.description
+  - else
+    %section.item-s.item-m.item-restaurant
+      %a{href: posts_path}
+        = image_tag "#{@post.image}",class:"image",style:"height:auto;"
+        .category
+          Favorite Restaurant
+        %h2.title
+          = @post.title
+        %p.description
+          = @post.description
 
   %div.map-box
-    - if @post.address == true
+    - if @post.address 
       %h2.address
         お店住所
-    %p.address-name
-      = @post.address
+      %p.address-name
+        = @post.address
     #map
       :javascript
         function initMap() {
