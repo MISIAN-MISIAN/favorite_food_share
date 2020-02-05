@@ -17,3 +17,13 @@
 $(function(){
   setTimeout("$('.notification').fadeOut('slow')", 2000) 
 })
+
+
+$(document).on('turbolinks:load', function(){
+  $(function() {
+    $(".select1").change(function() {
+      $(".is-hidden1").removeClass("is-hidden1");
+      $(".select2").addClass("is-show");
+    });
+  });
+});

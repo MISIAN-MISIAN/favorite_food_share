@@ -22,7 +22,7 @@
                     .error-message
                       画像がありません
         .sell__block__form__name
-          .form-group__name
+          .form-group__name.select1
             %label
               タイトルor店名
               %span.require 必須
@@ -39,10 +39,11 @@
                   - @post.errors.full_messages_for(:meals).each do |error|
                     .error-message
                       入力してください
-            %label
+          .form-group__name.select2   
+            %label.is-hidden1
               住所
-              %span.require 必須
-            %div
+              %span.require Favorite Restaurantを選ばれた場合入力
+            %div.is-hidden1 
               = f.text_field :address, class: "form__group__name title",placeholder:"レストランの住所を入力してください　例)　東京都港区１−１−１"
           .form-group__description
             %label
