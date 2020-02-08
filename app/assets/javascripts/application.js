@@ -14,9 +14,9 @@
 //= require activestorage
 //= require_tree .
 
-$(function(){
-  setTimeout("$('.notification').fadeOut('slow')", 2000) 
-})
+// $(function(){
+//   setTimeout("$('.notification').fadeOut('slow')", 2000) 
+// })
 
 
 $(document).on('turbolinks:load', function(){
