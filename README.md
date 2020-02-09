@@ -1,5 +1,32 @@
 # README
 
+# README
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+|admin_flg|boolean||
+### Association
+- has_many :posts
+
+
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|meals|text|null: false|
+|title|text|null: false|
+|address|string||
+|latitude|float||
+|user_id|integer||
+### Association
+- belongs_to :user
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
